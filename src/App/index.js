@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
 import { AppProvider } from "./AppProvider";
-import WelcomeMessage from "./WelcomeMessage";
 import Layout from "./Layout";
 import Navbar from "./Navbar";
+import Settings from "../Settings";
 
 function App() {
   return (
     <Layout>
       <AppProvider>
         <Navbar />
-        <WelcomeMessage />
+        <Settings />
       </AppProvider>
     </Layout>
   );
