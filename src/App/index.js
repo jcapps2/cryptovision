@@ -2,12 +2,12 @@ import React from "react";
 import "./App.css";
 import WelcomeMessage from "./WelcomeMessage";
 import Layout from "./Layout";
-import Nav from "./Nav";
+import Navbar from "./Navbar";
 
 function App() {
   return (
     <Layout>
-      <Nav />
+      <Navbar />
       <WelcomeMessage />
     </Layout>
   );
