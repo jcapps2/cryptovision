@@ -24,7 +24,8 @@ export class AppProvider extends React.Component {
       addCoin: this.addCoin,
       removeCoin: this.removeCoin,
       isInFavorites: this.isInFavorites,
-      confirmFavorites: this.confirmFavorites
+      confirmFavorites: this.confirmFavorites,
+      setFilteredCoins: this.setFilteredCoins
     };
   }
 
@@ -83,6 +84,9 @@ export class AppProvider extends React.Component {
 
   // Sets the current page using state
   setPage = page => this.setState({ page });
+
+  // Filtering coins for Search
+  setFilteredCoins = filteredCoins => this.setState({ filteredCoins });
 
   render() {
     return (
