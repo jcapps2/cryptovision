@@ -19,6 +19,11 @@ const ControlButtonElem = styled.div`
     css`
       color: blue;
     `}
+  ${props =>
+    props.hidden &&
+    css`
+      display: none;
+    `}
 `;
 
 // Set first letter in Navbar to uppercase.
@@ -34,8 +39,12 @@ const toProperCase = lower => {
 const ControlButton = ({ name }) => {
   return (
     <AppContext.Consumer>
-      {({ page, setPage }) => (
-        <ControlButtonElem active={page === name} onClick={() => setPage(name)}>
+      {({ firstVisit, page, setPage }) => (
+        <ControlButtonElem
+          active={page === name}
+          onClick={() => setPage(name)}
+          hidden={firstVisit && name === "dashboard"}
+        >
           {toProperCase(name)}
         </ControlButtonElem>
       )}
