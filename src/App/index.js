@@ -5,6 +5,7 @@ import Layout from "./Layout";
 import Navbar from "./Navbar";
 import Settings from "../Settings";
 import Content from "../Shared/Content";
+import Dashboard from "../Dashboard";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Content>
           <Settings />
+          <Dashboard />
         </Content>
       </AppProvider>
     </Layout>
