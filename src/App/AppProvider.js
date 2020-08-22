@@ -25,6 +25,7 @@ export class AppProvider extends React.Component {
       removeCoin: this.removeCoin,
       isInFavorites: this.isInFavorites,
       confirmFavorites: this.confirmFavorites,
+      setCurrentFavorite: this.setCurrentFavorite,
       setFilteredCoins: this.setFilteredCoins
     };
   }
@@ -84,10 +85,13 @@ export class AppProvider extends React.Component {
 
   // Adds selected favorites into state
   confirmFavorites = () => {
+    // Favorite coin is first in state
+    let currentFavorite = this.state.favorites[0];
     this.setState(
       {
         firstVisit: false,
-        page: "dashboard"
+        page: "dashboard",
+        currentFavorite
       },
       () => {
         this.fetchPrices();
@@ -96,7 +100,24 @@ export class AppProvider extends React.Component {
     localStorage.setItem(
       "cryptoVision",
       JSON.stringify({
-        favorites: this.state.favorites
+        favorites: this.state.favorites,
+        currentFavorite
+      })
+    );
+  };
+
+  // Setting local state for current favorite, then
+  // resetting local storage with current value
+  // plus new current favorite.
+  setCurrentFavorite = sym => {
+    this.setState({
+      currentFavorite: sym
+    });
+    localStorage.setItem(
+      "cryptoVision",
+      JSON.stringify({
+        ...JSON.parse(localStorage.getItem("cryptoVision")),
+        currentFavorite: sym
       })
     );
   };
@@ -107,8 +128,8 @@ export class AppProvider extends React.Component {
       return { page: "settings", firstVisit: true };
     }
     // If we have local data, pull the favorites in and return them
-    let { favorites } = cryptoVisionData;
-    return { favorites };
+    let { favorites, currentFavorite } = cryptoVisionData;
+    return { favorites, currentFavorite };
   }
 
   // Sets the current page using state
