@@ -17,7 +17,7 @@ const ControlButtonElem = styled.div`
   ${props =>
     props.active &&
     css`
-      color: blue;
+      color: #5fff17;
     `}
   ${props =>
     props.hidden &&

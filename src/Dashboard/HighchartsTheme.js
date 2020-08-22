@@ -3,11 +3,11 @@ import { lightTheme } from "../Shared/Styles";
 export default {
   colors: ["#5fff17"],
   chart: {
-    backgroundColor: lightTheme ? "white" : "#061a44",
+    backgroundColor: lightTheme ? "white" : "#333745",
     borderColor: "#000000",
     borderWidth: 0,
     className: "dark-container",
-    plotBackgroundColor: lightTheme ? "white" : "#061a44"
+    plotBackgroundColor: lightTheme ? "white" : "#333745"
   },
   title: {
     style: {

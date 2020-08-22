@@ -7,9 +7,10 @@ import {
 } from "./Styles";
 
 export const Tile = styled.div`
-  padding: 10px;
+  padding: 2rem;
   ${subtleBoxShadow};
   ${lightBlueBackground};
+  text-align: center;
 `;
 
 export const SelectableTile = styled(Tile)`

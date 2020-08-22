@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { backgroundColor2, fontSize2 } from "../Shared/Styles";
+import { fontSize2 } from "../Shared/Styles";
 import { AppContext } from "../App/AppProvider";
 import _ from "lodash";
 import fuzzy from "fuzzy";
@@ -11,11 +11,11 @@ const SearchGrid = styled.div`
 `;
 
 const SearchInput = styled.input`
-  ${backgroundColor2};
+  background: transparent;
   ${fontSize2};
   border: 1px solid;
   height: 25px;
-  color: #1163c9;
+  color: #fff;
   place-self: center left;
 `;
 
